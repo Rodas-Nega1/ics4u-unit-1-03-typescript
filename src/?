@@ -1,0 +1,64 @@
+/**
+ * This program is based on the Rock-Paper-Scissors game
+ *     with a computer opponent.
+ *
+ * By:      Rodas Nega
+ * Version: 1.0
+ * Since:   2022-09-19
+ */
+
+import promptSync from 'prompt-sync'
+
+// The program will halt with a response at improper user inputs
+const prompt = promptSync();
+const soup = 1.45;
+const sub = 1;
+const pizza = 0.45;
+let minutes = 0;
+let seconds = 0;
+
+// input
+const userInput = prompt("What lunch do you want to heat (sub, pizza, or soup): ");
+const userInput2 = prompt("How many of this lunch item do you want to heat?: ");
+const itemNumber = parseFloat(userInput2);
+// process & output
+if (userInput === "soup") { 
+    if (itemNumber == 1) {
+        minutes = soup;
+    } if (itemNumber == 2) {
+          minutes = soup * 1.5;
+      } if (itemNumber == 2) {
+            minutes = soup + soup;
+            seconds = minutes;
+            minutes = Math.floor(minutes);
+            seconds = Math.ceil((seconds - minutes) * 60); 
+      }
+} else if (userInput === "sub") { 
+    if (itemNumber == 1) {
+        minutes = sub;
+    } if (itemNumber == 2) {
+          minutes = sub * 1.5;
+      } if (itemNumber == 2) {
+            minutes = sub + sub;
+            seconds = minutes;
+            minutes = Math.floor(minutes);
+            seconds = Math.ceil((seconds - minutes) * 60); 
+      }
+} else if (userInput === "pizza") { 
+    if (itemNumber == 1) {
+        minutes = pizza;
+    } if (itemNumber == 2) {
+          minutes = pizza * 1.5;
+      } if (itemNumber == 2) {
+            minutes = pizza + pizza;
+            seconds = minutes;
+            minutes = Math.floor(minutes);
+            seconds = Math.ceil((seconds - minutes) * 60);
+      } else { 
+            console.log("That is an invalid number");
+   }
+} else {
+   console.log("That is an invalid input.");
+}
+console.log(`\nThe total time elapsed will be: ${minutes} minutes and ${seconds} seconds.`);
+
